@@ -3,6 +3,7 @@ module k8s-grpc-deploy/add
 go 1.22.5
 
 require (
+	github.com/snitgit/k8s-grpc-deploy v0.0.0-20241028153632-dfcccc36855d
 	golang.org/x/net v0.30.0
 	google.golang.org/grpc v1.67.1
 )

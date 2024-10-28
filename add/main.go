@@ -9,7 +9,7 @@ import (
         "net"
     
         // replace this with your own project
-        "k8s-grpc-deploy/pb"
+        "github.com/snitgit/k8s-grpc-deploy/pb"
 )
 
 func (s *server) Compute(cxt context.Context, r *pb.AddRequest) (*pb.AddResponse, error) {
@@ -33,6 +33,7 @@ func main() {
 	s := grpc.NewServer()
 	pb.RegisterAddServiceServer(s, &server{})
 	reflection.Register(s)
+	//pb.RegisterUserServiceServer(s, &server{})
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("Failed to serve: %v", err)
 	}
